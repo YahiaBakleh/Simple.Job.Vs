@@ -1,0 +1,27 @@
+﻿@model IEnumerable<JobExample.Models.Job>
+
+@{
+    ViewBag.Title = "OnCategory";
+}
+
+<h2>@ViewBag.categoryTitle</h2>
+
+<div>
+    <h4>Job</h4>
+    <hr />
+    <div class="dl-horizontal">
+
+        @foreach (var job in Model)
+        {
+            <ul>
+                <li>@job.JobTitle</li>
+                <li>@ViewBag.categoryTitle</li>
+            </ul>
+
+
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = job.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+            }
+    </div>
